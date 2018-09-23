@@ -1,0 +1,273 @@
+
+
+<!-- Declaração do tipo de documento html. 
+Neste caso é HTML5 -->
+<!doctype html>
+
+<!-- importante! Definir a linguagem
+ da página WEB -->
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="utf-8" />
+	<!-- tem que ter em php aqui se não não estava funcionando -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+<META HTTP-EQUIV="Expires" CONTENT="-1" />
+
+    <meta name="description" 
+ content="Nesta página veremos como implementar um formulário HTML5 com bootstrap e diversas  " />
+    <meta name="author" content="" />
+
+    <title>Calendário em campo de texto (Input) Usando Pikaday</title>
+
+    <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Com a tag link geralmente apontamos para arquivos css do seu site
+ ou de outros sites como o CDN do bootstrap acima -->
+<!-- o css externo -->
+<link  href="cssexterno.css" rel="stylesheet" >
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<style>	
+	
+/*.container */
+
+.header{
+
+}
+        
+#page-content-wrapper{
+position:relative;
+top:25px;
+
+}
+
+body {
+    word-wrap: break-word;
+}
+.secao-cronograma{
+font-weight:bolder;
+
+}
+
+form{font-weight:bolder;}
+    
+.panel-title{
+        
+   font-size: 2.0rem;
+}
+        
+</style>
+
+	
+</head>
+
+<body  >
+
+<div class="container-fluid header">
+ <!-- -->
+				
+		
+
+<!-- Page Content -->
+        <div id="page-content-wrapper">
+
+<!--  -->
+
+<div class="container-fluid">
+
+<!-- abaixo é como eu acrescento uma linha em branco
+Não costumo usar <br /> quando uso bootstrap.
+ -->
+<div class="row">
+	<div class="col-md-12">
+	&nbsp;
+	</div> <!-- fim col -->
+</div>
+
+<div class="row">&nbsp;</div>
+
+
+	<div class="panel panel-info">
+  <div class="panel-heading">
+    <h1 class="panel-title" style="font-size: 2.5rem;">CADASTRAR PROJETO INOVADOR</h1>
+  </div>
+  <div class="panel-body " style="background-color:#d9edf7;">
+
+  
+    <div class="row">
+	
+    <div class="col-md-8">
+	<!-- data-validate -->
+	<form name="formenvio" id="formenvio" action="" class="form-horizontal"   method="post">
+
+	
+<div class="row">	<!-- class="col-xs-4 regula o tamanho da div e col-xs-offset-4-->
+	<div class="col-xs-8 col-xs-offset-2">
+		<div class="alert alert-warning output hidden">&nbsp;</div>
+	</div>
+</div>
+
+
+ <!-- A expressão regular que definí
+  para data no jsexterno  
+  pega datas de 1900 a 2099.
+  Datas fora deste range
+  são consideradas inválidas.
+  A regra é definida aqui como 
+  data-rule="date" no campo input.
+  Veja os campos input abaixo.
+
+	Voces devem procurar uma outra
+	expressão regular se necessitarem 
+	um range maior ou um 
+	que pegue qualque data
+-->
+
+ <div class="row">
+    <div class="col-sm-6">
+        <div class="form-group  has-success">
+            <label for="data_inicio" class="col-sm-4 control-label">Data Inicial do projeto: </label>
+            <!--<input type="text" class="form-control" disabled>-->
+			<div class="col-sm-6">
+	            <input type="text" data-rule="date" name="data_inicio"  id="data_inicio"
+	            data-required data-datepicker 
+	            data-msg="O campo 'Data Inicial' é obrigatório e deve ser preenchido no formato dd/mm/aaaa!"
+	            class="form-control">
+			</div>
+    	</div>
+    </div>
+						
+
+    <!--Outro campo com atributos data-datepicker
+    	e data-rule="date" -->
+	<div class="col-sm-6 ">
+        <div class="form-group  has-success">
+
+          	<label for="data_fim" class="col-sm-4 control-label">Data Final do projeto:</label>
+			<div class="col-sm-6">
+	            <input name="data_fim" data-rule="data"  id="data_fim"  data-required data-datepicker 
+				data-msg="O campo 'Data Final' é obrigatório e deve ser preenchido no formato dd/mm/aaaa!" type="text" 
+	            class=" form-control">
+			</div>
+        </div>
+    </div>
+						
+						
+
+</div><!-- fim row datas -->
+
+  <hr />
+	  
+	  <div class="col-sm-2">
+		  <div  class="form-group">
+			<div class="col-sm-2 ">
+			  <button id="cadastraformprincipal"
+			  data-tooltip title="Use este botão para cadastrar sua ideia."  
+			  type="button"  class="btn btn-info btn-lg">Cadastrar</button> 
+			</div> 
+		  </div>
+	  </div>
+	  
+  
+</div>
+  
+</form>
+	
+	
+	</div>
+	
+
+	
+	</div>
+	
+  </div> <!-- fim panelbody principal-->
+</div> <!-- fim panel principal -->
+
+
+</div> <!-- container -->
+
+	
+
+</div> <!-- fim  Page Content  id="page-content-wrapper 	-->
+	
+	
+	<!-- jQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+
+
+            
+</div> <!--<div class="container-fluid"> -->
+
+<script src="jsexterno.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+//notify('ii');
+//alert("cx");
+	
+	//$('#cadastraformprincipal,#salvaformprincipal').on('click', function(e){
+	//Para o código ficar mais simples
+	// eu deixei apenas um botão
+
+	$('#cadastraformprincipal').on('click', function(e){
+	
+		//alert($(this).closest("form").html());					
+
+		//pega o botão clicado
+		//jQuery(this) é igual a: $(this);
+		//$ é um alias para JQuery
+		var btn = jQuery(this);	
+
+		//$(this).closest("element") procura o primeiro
+		//element ancestral do elemento atual, no caso o 
+		//formulario ancestral de $(this)  
+		var el_form = $(this).closest("form");
+		
+        //desabilita o botão para não
+        //ter a possibilidade do usuário executar de novo
+		$(this).data('disabled', 'disabled');				
+		
+		//Chama o código de validação que é comum
+        //a vários forms do site e fica 
+        //no jsexterno, utilizando expressões regulares
+        validateClick($(el_form));			
+
+
+  });//fim de $('#cadastraformprincipal').on('click',
+
+ 
+		
+});//fim document.ready
+
+</script>            
+
+</body>
+
+
+</html>
+
+
+
+
+
+
